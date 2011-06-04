@@ -72,6 +72,8 @@
 (require 'ido)
 
 (global-set-key (kbd "C-x C-g") 'magit-status)
+(global-set-key (kbd "M-C-f") 'enlarge-window-horizontally)
+(global-set-key (kbd "M-C-c") 'enlarge-window)
 
 (custom-set-variables
  '(current-language-environment "UTF-8")
