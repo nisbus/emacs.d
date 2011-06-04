@@ -1,0 +1,3 @@
+[submodule "distel"]
+	path = distel
+	url = https://github.com/bmizerany/distel.git
