@@ -63,8 +63,15 @@
 	      (define-key erlang-shell-mode-map (car spec) (cadr spec)))))
 
 (add-to-list 'load-path "~/.emacs.d")
+(add-to-list 'load-path "~/.emacs.d/fsharp")
+(autoload 'fsharp-mode "fsharp" "Major mode for editing F# code." t)
+(autoload 'run-fsharp "inf-fsharp" "Run an inferior F# process." t)
+
+
 ;; (require 'rfringe)
 (require 'flymake-cursor)
+(set-face-background 'flymake-errline "red4")
+(set-face-background 'flymake-warnline "dark slate blue")
 (require 'color-theme)
 (color-theme-initialize)
 (color-theme-zenburn)
