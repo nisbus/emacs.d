@@ -36,6 +36,20 @@
 (setq auto-save-default nil)
 (setq inhibit-startup-message t)
 
+;;C# mode
+(setq load-path (cons  "~/.emacs.d/csharp_tools_for_emacs" load-path))
+(setq load-path (cons  "~/.emacs.d/cc-mode" load-path))
+(load-library "cc-mode")
+(load-library "csharp-mode")
+(setq auto-mode-alist (append '( ("\\\\.cs$" . csharp-mode)) auto-mode-alist))
+(setq auto-mode-alist (append '( ("\\\\.build$" . sgml-mode)) auto-mode-alist))
+(setq auto-mode-alist (append '( ("\\\\.aspx$" . sgml-mode)) auto-mode-alist))
+(custom-set-variables '(global-font-lock-mode t nil (font-lock))
+		      '(show-paren-mode t))
+(setq-default compile-command "nant -nologo")
+(autoload 'csharp-mode "cc-mode")
+
+
 ;;; Shell mode
 (setq ansi-color-names-vector ; better contrast colors
       ["black" "red4" "green4" "yellow4"
