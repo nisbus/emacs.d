@@ -36,6 +36,16 @@
 (setq auto-save-default nil)
 (setq inhibit-startup-message t)
 
+;;; Shell mode
+(setq ansi-color-names-vector ; better contrast colors
+      ["black" "red4" "green4" "yellow4"
+       "blue3" "magenta4" "cyan4" "white"])
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+;;Make shell read-only
+(add-hook 'shell-mode-hook 
+     '(lambda () (toggle-truncate-lines 1)))
+(setq comint-prompt-read-only t)
+
 ;;Haskell mode, requires haskell-hlint for compiling 
 ;; try C-ch for list of commands
 (load "/usr/share/emacs/site-lisp/haskell-mode/haskell-site-file")
